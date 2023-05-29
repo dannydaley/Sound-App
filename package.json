@@ -1,0 +1,18 @@
+{
+  "name": "sound-app",
+  "version": "0.0.1",
+  "description": "This application currently exists for the purpose of experimenting with Tone.js to create web based instruments.",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --config ./webpack.config.js --mode development",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
