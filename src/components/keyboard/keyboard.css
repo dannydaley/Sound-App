@@ -1,0 +1,12 @@
+#Octave-Selector-Outer input[type="number"]::-webkit-inner-spin-button,
+#Octave-Selector-Outer input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+#Octave-Selector-Outer input[type="number"]::-webkit-outer-spin-button,
+#Octave-Selector-Outer input[type="number"]::-webkit-inner-spin-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
