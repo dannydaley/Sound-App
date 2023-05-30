@@ -64,14 +64,18 @@ const keyEffect = (note) => {
         document.getElementById(tone + "-Key") !== null &&
         document.getElementById(tone + "-Key") !== undefined
     ) {
-        // make note of what the original coloue was..
-        let noteColour = document.getElementById(tone + "-Key").style
-            .backgroundColor;
+        // set empty variable to receive note colour to switch back to
+        let noteColour;
+
+        // if incoming tone string contains "Sharp", set noteColour to black, otherwise white
+        tone.includes("Sharp")
+            ? (noteColour = "black")
+            : (noteColour = "white");
 
         // change key to grey
         document.getElementById(tone + "-Key").style.backgroundColor = "grey";
 
-        // wait 500 miliseconds then change to white
+        // wait 500 miliseconds then change to original colour
         setTimeout(() => {
             document.getElementById(tone + "-Key").style.backgroundColor =
                 noteColour;
