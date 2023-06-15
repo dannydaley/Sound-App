@@ -93,7 +93,14 @@ export default class Keyboard extends React.Component {
         ) {
             synth = new Tone.PolySynth().toDestination();
         } else {
-            synth = new Tone.MonoSynth().toDestination();
+            synth = new Tone.MonoSynth({
+                oscillator: {
+                    type: "square",
+                },
+                envelope: {
+                    attack: 0.1,
+                },
+            }).toDestination();
         }
 
         const octave = document.getElementById("Octave-Selector").value;
@@ -106,40 +113,41 @@ export default class Keyboard extends React.Component {
             // play note depending on key press
             switch (event.key.toUpperCase()) {
                 case "A":
-                    synth.triggerAttackRelease(["C" + octave], 1.0);
+                    synth.triggerAttackRelease("C" + octave, "8n");
+
                     break;
                 case "W":
-                    synth.triggerAttackRelease(["C#" + octave], 1);
+                    synth.triggerAttackRelease("C#" + octave, "8n");
                     break;
                 case "S":
-                    synth.triggerAttackRelease(["D" + octave], 1);
+                    synth.triggerAttackRelease("D" + octave, "8n");
                     break;
                 case "E":
-                    synth.triggerAttackRelease(["D#" + octave], 1);
+                    synth.triggerAttackRelease("D#" + octave, "8n");
                     break;
                 case "D":
-                    synth.triggerAttackRelease(["E" + octave], 1);
+                    synth.triggerAttackRelease("E" + octave, "8n");
                     break;
                 case "F":
-                    synth.triggerAttackRelease(["F" + octave], 1);
+                    synth.triggerAttackRelease("F" + octave, "8n");
                     break;
                 case "T":
-                    synth.triggerAttackRelease(["F#" + octave], 1);
+                    synth.triggerAttackRelease("F#" + octave, "8n");
                     break;
                 case "G":
-                    synth.triggerAttackRelease(["G" + octave], 1);
+                    synth.triggerAttackRelease("G" + octave, "8n");
                     break;
                 case "Y":
-                    synth.triggerAttackRelease(["G#" + octave], 1);
+                    synth.triggerAttackRelease("G#" + octave, "8n");
                     break;
                 case "H":
-                    synth.triggerAttackRelease(["A" + octave], 1);
+                    synth.triggerAttackRelease("A" + octave, "8n");
                     break;
                 case "U":
-                    synth.triggerAttackRelease(["A#" + octave], 1);
+                    synth.triggerAttackRelease("A#" + octave, "8n");
                     break;
                 case "J":
-                    synth.triggerAttackRelease(["B" + octave], 1);
+                    synth.triggerAttackRelease("B" + octave, "8n");
                     break;
                 case "ARROWDOWN":
                     document.getElementById("Octave-Selector").value--;
